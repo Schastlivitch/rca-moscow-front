@@ -1,0 +1,103 @@
+.panel {
+  background-color: #fff;
+  border-radius: 0.571em;
+  box-shadow: 0 0.071em 0.143em 0 var(--color-shadow);
+  --title-bar-background-color:var( --color-gray-4);
+  --title-bar-border-radius:0.571em 0.571em 0em 0em;
+  --body-padding:1.429em;
+  --body-padding-top:1.429em;
+}
+
+.panel__body {
+  padding: var(--body-padding);
+  padding-top:var(--body-padding-top) ;
+
+}
+
+.panel__title_bar {
+  justify-content: space-between;
+  align-items: center;
+  border-radius: var(--title-bar-border-radius);
+  background-color: var(--title-bar-background-color);
+  border-bottom: 0.071em solid #00000005;
+  display: flex;
+  height: 3.571em;
+  padding: 0 1.5em;
+}
+
+.panel__title {
+  font-size: 1.429em;
+  font-weight: 500;
+  line-height: 1.16em;
+  margin: 0;
+  margin-right: 2.75em;
+}
+
+.panel__title_bar_group_left{
+  align-items: center;
+  display: flex;
+  gap:5px
+}
+
+
+.panel__title_right {
+  align-items: center;
+  column-gap: 1.429em;
+  display: flex;
+}
+
+/* .panel {
+  background-color: rgb(255, 255, 255);
+  border-radius: 0.571em;
+  box-shadow: 0 0.071em 0.143em 0 var(--color-shadow);
+  --title-bar-background-color:#00000005;
+  --body-border-radius:0px;
+  --body-height:auto;
+  --body-padding:1.429em;
+  --title-bar-height:3.571em;
+  --body-background-color: rgba(255, 255, 255, 0);
+  --font-size:1.429em;
+  --line-height: 1.16em;
+  --title-bar-padding: 0 2.143em;
+  --overflow-x: hidden;
+  --overflow-y: hidden;
+}
+
+.panel__body {
+  padding: var(--body-padding);
+  border-radius: var(--body-border-radius);
+  background-color: var(--body-background-color);
+  height: var(--body-height);
+  overflow-x: var(--overflow-x);
+  overflow-y: var(--overflow-y);
+  max-height: 780px;
+}
+
+.panel__title_bar {
+  align-items: center;
+  background-color:var(--title-bar-background-color);
+  border-bottom: 0.071em solid #00000005;
+  display: flex;
+  height: var(--title-bar-height);
+  padding: var(--title-bar-padding)
+}
+
+.panel__title {
+  font-size: var(--font-size);
+  font-weight: 500;
+  line-height: var(--line-height);
+  margin: 0;
+  margin-right: 0.7em;
+  margin-top: 0.2em;
+}
+
+.panel__title_left {
+  flex-grow: 1;
+}
+
+.panel__title_left,
+.panel__title_right {
+  align-items: center;
+  column-gap: 1.429em;
+  display: flex;
+} */

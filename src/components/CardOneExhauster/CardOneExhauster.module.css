@@ -1,0 +1,37 @@
+.panel{
+  width: 350px;
+  --body-padding-top:0.4em
+}
+.title_rotor{
+
+}
+.group_rotor{
+  display: flex;
+  align-items: center;
+  gap:15px;
+
+}
+.rotor_data{
+  background-color:var(--color-gray-2);
+ padding: 3px;
+}
+.separator{
+  background-color: var(--color-gray-4);
+  height: 1px;
+}
+.update_group{
+  display: flex;
+  align-items: center;
+gap:20px;
+background-color: var(--color-gray-1);
+padding-left: 30px;
+}
+.rotor_update_day{
+  background-color: var(--color-gray-4);
+  padding: 5px;
+}
+.update_group_forecast{
+  display: flex;
+  flex-direction: column;
+gap:5px
+}
