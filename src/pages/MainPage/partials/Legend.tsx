@@ -8,7 +8,7 @@ function Legend() {
 		<div className={styles["legend"]}>
 			<div
 				className={styles["legend_item"]}
-				onClick={() => navigate("/control/123")}
+				onClick={() => navigate("/schema/123")}
 			>
 				Легенда 1
 			</div>

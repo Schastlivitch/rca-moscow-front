@@ -3,7 +3,7 @@ import Layout from "../../components/Layout";
 import Legend from "./partials/Legend";
 
 // Styles
-import styles from "./ControlPage.module.css";
+import styles from "./SchemaPage.module.css";
 
 function ControlPage() {
   return (

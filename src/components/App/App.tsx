@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Header from "../Header";
 
 // Pages
-import ControlPage from "../../pages/ControlPage";
+import SchemaPage from "../../pages/SchemaPage";
 import MainPage from "../../pages/MainPage";
 import TrendsPage from "../../pages/TrendsPage";
 import NotFoundPage from "../../pages/NotFoundPage";
@@ -21,8 +21,8 @@ function App() {
 					<Route path="/" element={<MainPage />} />
 					<Route path="trends" element={<NotFoundPage />} />
 					<Route path="trends/:exhausterId" element={<TrendsPage />} />
-					<Route path="control" element={<NotFoundPage />} />
-					<Route path="control/:exhausterId" element={<ControlPage />} />
+					<Route path="schema" element={<NotFoundPage />} />
+					<Route path="schema/:exhausterId" element={<SchemaPage />} />
 				</Routes>
 			</section>
 		</div>
