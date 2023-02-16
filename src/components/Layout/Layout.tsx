@@ -3,7 +3,7 @@ import styles from "./Layout.module.css";
 
 interface IProps {
   title: string;
-  headerRightElement: ReactNode;
+  headerRightElement?: ReactNode;
   children: ReactNode;
 }
 

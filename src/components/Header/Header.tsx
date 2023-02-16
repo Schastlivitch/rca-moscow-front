@@ -1,14 +1,57 @@
+import { useMemo } from "react";
+import { useLocation, useNavigate, useNavigation } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
+import { LocationItemType } from "../../types/types";
 
 import styles from "./Header.module.css";
 
 function Header() {
-  return (
-    <div className={styles["root"]}>
-      <Logo />
-      <h1 className={styles["title"]}>Прогнозная аналитика эксгаустеров</h1>
-    </div>
-  );
+	const { pathname } = useLocation();
+	const navigate = useNavigate();
+
+	const navigateTo = (url: string) => {
+		return () => navigate(url);
+	};
+
+	const currentLocationTitle: LocationItemType[] = useMemo(() => {
+		if (pathname.includes("/trends")) {
+			return [
+				{ url: "/", title: "Главная страница" },
+				{ url: "/trends", title: "Тренды", isCurrent: true },
+			];
+		}
+
+		if (pathname.includes("/control")) {
+			return [
+				{ url: "/", title: "Главная страница" },
+				{ url: "/control", title: "Панель управления", isCurrent: true },
+			];
+		}
+
+		return [];
+	}, [pathname]);
+
+	return (
+		<div className={styles["root"]}>
+			<section className={styles["left_section"]}>
+				<Logo />
+				<h1 className={styles["title"]}>Прогнозная аналитика эксгаустеров</h1>
+			</section>
+			<section className={styles["right_section"]}>
+				{currentLocationTitle.map((item) => (
+					<button
+						type="button"
+						key={item.url}
+						disabled={item.isCurrent}
+						onClick={navigateTo(item.url)}
+						className={styles["navigation_item"]}
+					>
+						{item.title}
+					</button>
+				))}
+			</section>
+		</div>
+	);
 }
 
 export default Header;
