@@ -1,9 +1,21 @@
 .panel{
-  width: 350px;
-  --body-padding-top:0.4em
+  box-sizing: border-box;
+  width: 288px;
+  background: #FFFFFF;
+  border-width: 0px 1px 1px 1px;
+border-style: solid;
+border-color: #E5E5E5;
+  --title-bar-background-color:#6E6E6D;
+  /* --body-padding-top:0.4em; */
+  --body-padding:14px;
 }
 .title_rotor{
-
+  font-family: 'GT Eesti Pro Text';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 17px;
+  color: #2B2B2A;
 }
 .group_rotor{
   display: flex;
@@ -16,7 +28,7 @@
  padding: 3px;
 }
 .separator{
-  background-color: var(--color-gray-4);
+  background-color: #EFEFEF;
   height: 1px;
 }
 .update_group{

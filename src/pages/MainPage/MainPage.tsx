@@ -4,11 +4,12 @@ import Legend from "./partials/Legend";
 
 // Styles
 import styles from "./MainPage.module.css";
+import CardOneExhauster from "../../components/CardOneExhauster";
 
 function MainPage() {
   return (
     <Layout title="Главная страница" headerRightElement={<Legend />}>
-      <div className={styles["root"]}>Содержимое страницы</div>
+      <CardOneExhauster />
     </Layout>
   );
 }

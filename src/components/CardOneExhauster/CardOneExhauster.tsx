@@ -2,6 +2,7 @@ import React from "react";
 import Accordion from "../Accordion/Accordion";
 import Button from "../Button";
 import Panel from "../Panel";
+import ExshausterPreview from "../SvgComponents/ExshausterPreview/ExshausterPreview";
 import styles from "./CardOneExhauster.module.css";
 
 const CardOneExhauster: React.FC = () => {
@@ -9,7 +10,7 @@ const CardOneExhauster: React.FC = () => {
     <>
       <Panel
         className={styles.panel}
-        title={"huft"}
+        title={"Эксгаустер У-171"}
         TitleBarRightComponent={<Button />}
         TitleBarLeftComponent={<div>o</div>}
       >
@@ -27,6 +28,7 @@ const CardOneExhauster: React.FC = () => {
               <div>10 сут</div>
             </div>
           </div>
+          <ExshausterPreview />
           <Accordion />
         </div>
       </Panel>
