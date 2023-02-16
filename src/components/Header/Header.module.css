@@ -1,0 +1,17 @@
+.root {
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: var(--header-height);
+  padding: 15px;
+  background-color: var(--color-gray-f);
+  box-shadow: var(--default-box-shadow);
+}
+
+.title {
+  margin: 0 0 0 20px;
+  font-weight: 500;
+  font-size: 18px;
+  user-select: none;
+}

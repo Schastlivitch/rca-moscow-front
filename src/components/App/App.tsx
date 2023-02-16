@@ -1,14 +1,31 @@
 import { Routes, Route } from "react-router-dom";
-import ExamplePage from "../../pages/ExamplePage";
 
+// Components
+import Header from "../Header";
+
+// Pages
+import ControlPage from "../../pages/ControlPage";
+import MainPage from "../../pages/MainPage";
+import TrendsPage from "../../pages/TrendsPage";
+
+// Styles
 import styles from "./App.module.css";
 
 function App() {
   return (
     <div className={styles["root"]}>
-      <Routes>
-        <Route path="/" element={<ExamplePage />} />
-      </Routes>
+      <Header />
+      <section className={styles["layout"]}>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+        </Routes>
+        <Routes>
+          <Route path="/trends/:exhausterId" element={<TrendsPage />} />
+        </Routes>
+        <Routes>
+          <Route path="/control/:exhausterId" element={<ControlPage />} />
+        </Routes>
+      </section>
     </div>
   );
 }

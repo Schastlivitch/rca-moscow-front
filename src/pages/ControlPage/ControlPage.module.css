@@ -1,0 +1,16 @@
+.root {
+  position: relative;
+}
+
+.legend {
+  display: flex;
+}
+
+.legend_item {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.legend_item:not(:last-child) {
+  margin-right: 20px;
+}
