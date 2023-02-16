@@ -1,3 +1,36 @@
 .root {
-  position: relative;
+  background-color: var(--color-gray-f);
+  border: 1px solid var(--color-yellow-7);
+  border-radius: 5px;
+  margin: 0;
+  font-weight: 300;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-family: inherit;
+  line-height: 1em;
+  padding: 7px 10px 6px 10px;
+  transition: background-color 120ms ease-out;
+}
+
+.root:focus {
+  outline: none;
+}
+
+.root:focus-visible {
+  background-color: var(--color-yellow-7);
+  color: var(--color-gray-f);
+  outline: 0.167em solid var(--color-yellow-7);
+  outline-offset: 0.167em;
+}
+
+.root:hover {
+  background-color: var(--color-yellow-7);
+  color: var(--color-gray-f);
+}
+
+.root:disabled {
+  background-color: var(--color-gray-f);
+  border-color: var(--color-yellow-2);
+  color: var(--color-gray-6);
+  cursor: default;
 }
