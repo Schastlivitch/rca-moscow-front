@@ -1,0 +1,30 @@
+.root {
+  position: relative;
+  min-width: inherit;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: var(--color-gray-1);
+  border-radius: 5px 5px 0 0;
+  border-bottom: 1px solid var(--color-gray-4);
+  user-select: none;
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.right_container {
+  position: relative;
+}
+
+.content {
+  padding: 15px;
+}
