@@ -1,17 +1,50 @@
 .root {
-  position: relative;
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
-  height: var(--header-height);
-  padding: 15px;
-  background-color: var(--color-gray-f);
-  box-shadow: var(--default-box-shadow);
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	box-sizing: border-box;
+	height: var(--header-height);
+	padding: 15px;
+	background-color: var(--color-gray-f);
+	box-shadow: var(--default-box-shadow);
+}
+
+.left_section {
+	display: flex;
+	align-items: center;
 }
 
 .title {
-  margin: 0 0 0 20px;
-  font-weight: 500;
-  font-size: 18px;
-  user-select: none;
+	margin: 0 0 0 20px;
+	font-weight: 500;
+	font-size: 18px;
+	user-select: none;
+}
+
+.right_section {
+	display: flex;
+	align-items: center;
+}
+
+.navigation_item {
+	background-color: transparent;
+	cursor: pointer;
+	color: var(--color-gray-6);
+	transition: color 0.2s ease-in-out;
+	padding: 0;
+}
+
+.navigation_item:not(:last-child)::after {
+	content: "/";
+	padding: 0px 20px;
+}
+
+.navigation_item:hover {
+	color: var(--color-gray-8);
+}
+
+.navigation_item:disabled {
+	cursor: default;
+	color: var(--color-gray-0);
 }
