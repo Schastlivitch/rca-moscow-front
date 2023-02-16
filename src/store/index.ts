@@ -1,17 +1,19 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
-import exampleReducer from "./example/reducer";
+import mainReducer from "./main/reducer";
+import schemaReducer from "./schema/reducer";
 
 const middlewares = [thunk];
 
 const rootReducer = combineReducers({
-  example: exampleReducer,
+	main: mainReducer,
+  schema: schemaReducer,
 });
 
 const store = createStore(
-  rootReducer,
-  composeWithDevTools(applyMiddleware(...middlewares))
+	rootReducer,
+	composeWithDevTools(applyMiddleware(...middlewares))
 );
 
 export type RootState = ReturnType<typeof store.getState>;
