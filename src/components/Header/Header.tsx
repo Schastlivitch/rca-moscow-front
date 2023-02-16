@@ -1,7 +1,7 @@
 import { useMemo } from "react";
-import { useLocation, useNavigate, useNavigation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
-import { LocationItemType } from "../../types/types";
+import { LocationItemType } from "../../types";
 
 import styles from "./Header.module.css";
 
@@ -21,10 +21,10 @@ function Header() {
 			];
 		}
 
-		if (pathname.includes("/control")) {
+		if (pathname.includes("/schema")) {
 			return [
 				{ url: "/", title: "Главная страница" },
-				{ url: "/control", title: "Панель управления", isCurrent: true },
+				{ url: "/schema", title: "Панель управления", isCurrent: true },
 			];
 		}
 

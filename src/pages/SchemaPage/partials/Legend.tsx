@@ -1,5 +1,5 @@
 // Styles
-import styles from "../ControlPage.module.css";
+import styles from "../SchemaPage.module.css";
 
 function Legend() {
   return (
