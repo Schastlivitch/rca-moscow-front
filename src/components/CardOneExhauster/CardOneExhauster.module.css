@@ -1,49 +1,117 @@
-.panel{
+.panel {
   box-sizing: border-box;
   width: 288px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-width: 0px 1px 1px 1px;
-border-style: solid;
-border-color: #E5E5E5;
-  --title-bar-background-color:#6E6E6D;
+  border-style: solid;
+  border-color: #e5e5e5;
+  --title-bar-background-color: #6e6e6d;
   /* --body-padding-top:0.4em; */
-  --body-padding:14px;
+  --body-padding: 14px;
 }
-.title_rotor{
-  font-family: 'GT Eesti Pro Text';
+.title_rotor {
+  font-family: "GT Eesti Pro Text";
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
   line-height: 17px;
-  color: #2B2B2A;
+  color: #2b2b2a;
 }
-.group_rotor{
+.group_rotor {
   display: flex;
   align-items: center;
-  gap:15px;
-
+  gap: 15px;
 }
-.rotor_data{
-  background-color:var(--color-gray-2);
- padding: 3px;
+.rotor_data {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  font-family: "GT Eesti Pro Text";
+  font-style: normal;
+  font-weight: 375;
+  font-size: 13px;
+  line-height: 15px;
+  padding: 4px 10px;
+  gap: 10px;
+  color: #000000;
+  width: 76px;
+  height: 23px;
+  background-color: #f4f4f4;
 }
-.separator{
-  background-color: #EFEFEF;
+.separator {
+  background-color: #efefef;
   height: 1px;
 }
-.update_group{
+.update_group {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
-gap:20px;
-background-color: var(--color-gray-1);
-padding-left: 30px;
+  padding: 5px 20px;
+  width: 260px;
+height: 48px;
+  gap: 15px;
+  background-color:  #FAFAFA;
+  border-radius: 4px;
+
 }
-.rotor_update_day{
-  background-color: var(--color-gray-4);
-  padding: 5px;
+.rotor_update_day {
+  box-sizing: border-box;
+  display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+  width: 61px;
+height: 29px;
+  background-color:  #F4F4F4;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-family: 'GT Eesti Pro Text';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 21px;
+display: flex;
+align-items: center;
+text-align: center;
+color: #000000;
 }
-.update_group_forecast{
+.update_group_forecast {
   display: flex;
   flex-direction: column;
-gap:5px
+  gap: 5px;
+  margin-bottom: 10px;
+}
+.repair {
+  font-family: "GT Eesti Pro Text";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 15px;
+  margin-left: 20px;
+}
+.update_forecast_title{
+  font-family: 'GT Eesti Pro Text';
+  font-style: normal;
+  font-weight: 375;
+  font-size: 12px;
+  line-height: 14px;
+  color: #6E6E6D;
+}
+.update_forecast_day{
+  font-family: 'GT Eesti Pro Text';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 19px;
+color: #565655;
+}
+.button_header{
+  display: flex;
+  align-items: center;
+  padding: 0;
+  border-radius: 4px;
+}
+.button_header:hover{
+  background-color: #FAFAFA;
+   border: 1px solid var(--color-yellow-7); 
 }

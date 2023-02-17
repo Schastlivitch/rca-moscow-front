@@ -4,23 +4,13 @@ import arrowIcon from "../../assets/images/arrow_selector.svg";
 import Button from "../Button";
 import joinClassNames from "../../Utils/joinClassNames";
 import ArrowSelector from "../../assets/imagesTsx/ArrowSelector";
-import Document from "../../assets/imagesTsx/Document";
-import Note from "../../assets/imagesTsx/Note";
 
 interface IAccordionProp {
-  iconDoc?: boolean;
-  iconNote?: boolean;
   title?: string;
   className?: string;
   children?: ReactNode;
 }
-const Accordion: FC<IAccordionProp> = ({
-  iconDoc,
-  iconNote,
-  title,
-  className,
-  children,
-}) => {
+const Accordion: FC<IAccordionProp> = ({ title, className, children }) => {
   const [isOpen, setOpen] = useState(true);
 
   return (
@@ -32,17 +22,6 @@ const Accordion: FC<IAccordionProp> = ({
             setOpen(!isOpen);
           }}
         >
-          {iconDoc && (
-            <div className={styles.icon}>
-              <Document />
-            </div>
-          )}
-          {iconNote && (
-            <div className={styles.icon}>
-              <Note />
-            </div>
-          )}
-          <h3 className={styles["header__title"]}>{title}</h3>
           <div
             className={joinClassNames([
               styles["arrow"],
@@ -52,8 +31,8 @@ const Accordion: FC<IAccordionProp> = ({
             <div className={styles["arrow-icon"]}>
               <ArrowSelector />
             </div>
-            {/* <img src={arrowIcon} alt="chevron" className={styles['arrow-icon']} /> */}
           </div>
+          <h3 className={styles["header__title"]}>{title}</h3>
         </Button>
       </div>
       {isOpen && children}
