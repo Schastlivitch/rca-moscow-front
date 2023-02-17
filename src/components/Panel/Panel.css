@@ -42,9 +42,9 @@
 }
 
 .panel__title_bar_group_left {
-  align-items: center;
   display: flex;
-  gap: 5px;
+  gap: 10px;
+  align-items: center;
 }
 
 .panel__title_right {

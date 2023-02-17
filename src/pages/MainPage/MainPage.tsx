@@ -1,17 +1,16 @@
 // Components
 import Layout from "../../components/Layout";
-import Legend from "./partials/Legend";
+import Legend from "../../components/Legend/Legend";
 
 // Styles
 import styles from "./MainPage.module.css";
-import CardOneExhauster from "../../components/CardOneExhauster";
-import ItemsList from "../../components/Accordion/partials/ItemsList";
+import ListSinteringMachines from "../../components/ListSinteringMachines/ListSinteringMachines";
 
 function MainPage() {
   return (
-    <Layout title="Главная страница" headerRightElement={<Legend />}>
-      <CardOneExhauster />
-      <ItemsList />
+    <Layout title="Главный экран">
+      <Legend />
+      <ListSinteringMachines />
     </Layout>
   );
 }

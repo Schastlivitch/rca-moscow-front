@@ -1,0 +1,9 @@
+.body{
+  box-sizing: border-box;
+  /* margin-top: 10px; */
+  margin-bottom: 15px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
