@@ -13,7 +13,7 @@ export interface IExhausterParameters {
 	isWork: boolean;
 }
 
-type BearingItemType = {
+export type BearingItemType = {
 	name: string;
 	displayName: string;
 	temperature: number;
@@ -29,12 +29,12 @@ type CoolerTemperatureType = {
 	temperatureBefore: number;
 };
 
-type CoolerType = {
+export type CoolerType = {
 	oil: CoolerTemperatureType;
 	water: CoolerTemperatureType;
 };
 
-type GasManifoldType = {
+export type GasManifoldType = {
 	temperature: number;
 	underPressure: number;
 };
@@ -49,12 +49,12 @@ type ElectricalParameters = {
 	voltage: number;
 };
 
-type TransmissionType = {
+export type TransmissionType = {
 	rotor: ElectricalParameters;
 	stator: ElectricalParameters;
 };
 
-type OilSystemType = {
+export type OilSystemType = {
 	level: number;
 	pressure: number;
 };

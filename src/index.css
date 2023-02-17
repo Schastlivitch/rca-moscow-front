@@ -82,7 +82,9 @@
 
 body {
   margin: 0;
-  font-family: "Roboto", sans-serif;
+	font-family: 'GT Eesti Pro Text', -apple-system, BlinkMacSystemFont,
+		'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+		'Droid Sans', 'Helvetica Neue', sans-serif;
   font-size: 15px;
   font-weight: 500;
   overflow-y: scroll;
@@ -102,12 +104,16 @@ body {
 }
 
 button {
-  font-family: "Roboto", sans-serif;
+	font-family: 'GT Eesti Pro Text', -apple-system, BlinkMacSystemFont,
+		'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+		'Droid Sans', 'Helvetica Neue', sans-serif;
   font-size: 1em;
   border: none;
 }
 
 input {
-  font-family: "Roboto", sans-serif;
+	font-family: 'GT Eesti Pro Text', -apple-system, BlinkMacSystemFont,
+		'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+		'Droid Sans', 'Helvetica Neue', sans-serif;
   font-size: 1em;
 }

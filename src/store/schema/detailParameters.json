@@ -1,0 +1,166 @@
+{
+	"bearings": [
+		{
+			"displayName": "ПС1",
+			"name": "1",
+			"temperature": {
+				"value": 77,
+				"status": "ok"
+			},
+			"vibration": {
+				"axial": { "value": 55, "status": "warning" },
+				"horizontal": { "value": 44, "status": "alert" },
+				"vertical": { "value": 123, "status": "alert" }
+			}
+		},
+		{
+			"displayName": "ПС2",
+			"name": "2",
+			"temperature": {
+				"value": 77,
+				"status": "ok"
+			},
+			"vibration": {
+				"axial": { "value": 55, "status": "warning" },
+				"horizontal": { "value": 44, "status": "alert" },
+				"vertical": { "value": 123, "status": "alert" }
+			}
+		},
+		{
+			"displayName": "ПС3",
+			"name": "3",
+			"temperature": {
+				"value": 77,
+				"status": "ok"
+			}
+		},
+		{
+			"displayName": "ПС4",
+			"name": "4",
+			"temperature": {
+				"value": 77,
+				"status": "ok"
+			}
+		},
+		{
+			"displayName": "ПС5",
+			"name": "5",
+			"temperature": {
+				"value": 77,
+				"status": "ok"
+			}
+		},
+		{
+			"displayName": "ПС6",
+			"name": "6",
+			"temperature": {
+				"value": 77,
+				"status": "ok"
+			}
+		},
+		{
+			"displayName": "ПС7",
+			"name": "7",
+			"temperature": {
+				"value": 77,
+				"status": "ok"
+			},
+			"vibration": {
+				"axial": { "value": 55, "status": "warning" },
+				"horizontal": { "value": 44, "status": "alert" },
+				"vertical": { "value": 123, "status": "alert" }
+			}
+		},
+		{
+			"displayName": "ПС8",
+			"name": "8",
+			"temperature": {
+				"value": 77,
+				"status": "ok"
+			},
+			"vibration": {
+				"axial": { "value": 55, "status": "warning" },
+				"horizontal": { "value": 44, "status": "alert" },
+				"vertical": { "value": 123, "status": "alert" }
+			}
+		},
+
+		{
+			"displayName": "ПС9",
+			"name": "6",
+			"temperature": {
+				"value": 77,
+				"status": "ok"
+			}
+		}
+	],
+	"cooler": {
+		"oil": {
+			"temperatureAfter": {
+				"value": 77,
+				"status": "ok"
+			},
+			"temperatureBefore": {
+				"value": 77,
+				"status": "ok"
+			}
+		},
+		"water": {
+			"temperatureAfter": {
+				"value": 77,
+				"status": "ok"
+			},
+			"temperatureBefore": {
+				"value": 77,
+				"status": "ok"
+			}
+		}
+	},
+	"gasManifold": {
+		"temperature": {
+			"value": 77,
+			"status": "ok"
+		},
+		"underPressure": {
+			"value": 77,
+			"status": "ok"
+		}
+	},
+	"isWork": true,
+	"oilSystem": {
+		"level": {
+			"value": 77,
+			"status": "ok"
+		},
+		"pressure": {
+			"value": 77,
+			"status": "ok"
+		}
+	},
+	"transmission": {
+		"rotor": {
+			"amperage": {
+				"value": 77,
+				"status": "ok"
+			},
+			"voltage": {
+				"value": 77,
+				"status": "ok"
+			}
+		},
+		"stator": {
+			"amperage": {
+				"value": 77,
+				"status": "ok"
+			},
+			"voltage": {
+				"value": 77,
+				"status": "ok"
+			}
+		}
+	},
+	"valve": {
+		"isOpen": true,
+		"position": 45
+	}
+}

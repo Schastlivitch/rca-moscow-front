@@ -1,0 +1,70 @@
+.root {
+	display: flex;
+	align-items: center;
+	position: relative;
+	padding-left: calc(1.5em + 10px);
+	cursor: pointer;
+	font-weight: 400;
+	/* font-size: 1em; */
+	/* line-height: 2em; */
+	width: calc(100% - 1.5em - 10px);
+	height: 20px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.title {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.root > input {
+	display: none;
+}
+
+.checkmark {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	height: 18px;
+	width: 18px;
+	margin-top: -0.75em;
+	background-color: var(--color-gray-f);
+	border-radius: 5px;
+	border: 1px solid var(--color-gray-5);
+	transition: background-color 0.2s;
+}
+
+.root:hover input ~ .checkmark {
+	background-color: var(--color-gray-4);
+}
+
+.root input:checked ~ .checkmark {
+	background-color: var(--color-yellow-6);
+	border-color: var(--color-yellow-6);
+}
+
+.checkmark:after {
+	content: '';
+	position: absolute;
+	display: none;
+}
+
+.root input:checked ~ .checkmark:after {
+	display: block;
+}
+
+.root .checkmark:after {
+	left: calc(1.6em / 4);
+	top: 0.1em;
+	width: 0.4em;
+	height: 0.65em;
+	border: solid var(--color-gray-f);
+	border-width: 0 2px 2px 0;
+	-webkit-transform: rotate(40deg);
+	-ms-transform: rotate(40deg);
+	transform: rotate(40deg);
+}
