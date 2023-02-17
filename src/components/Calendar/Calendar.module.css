@@ -1,0 +1,348 @@
+.root {
+	background-color: #fff;
+	border-radius: 0.25em;
+	column-gap: 0.625em;
+	display: flex;
+	align-items: center;
+}
+
+.calendar_pane {
+	background-color: var(--pane-background-color);
+	/* 	padding-bottom: 0.375em; */
+	width: 16.875em;
+}
+
+.calendar_day {
+	background-color: var(--pane-background-color);
+	display: grid;
+	font-size: 1em;
+	grid-template-columns: repeat(7, auto);
+}
+
+.button,
+.day_of_week {
+	text-align: center;
+	font-size: 14px;
+}
+
+.day_of_week {
+	background-color: #fafafa;
+	color: #bebebf;
+	padding: 0 0 0.714em;
+	margin-bottom: 0.714em;
+}
+
+.day_of_week:nth-child(1) {
+	padding-left: 0.714em;
+}
+
+.day_of_week:nth-child(6) {
+	color: #9b9b9c;
+}
+
+.day_of_week:nth-child(7) {
+	color: #9b9b9c;
+	padding-right: 0.714em;
+}
+
+.cells {
+	padding-left: 0.143em;
+	padding-bottom: 0.143em;
+}
+
+.cells:nth-of-type(7n) {
+	padding-right: 0.714em;
+}
+
+.cells:nth-of-type(7n + 8) {
+	padding-left: 0.714em;
+}
+
+.button {
+	aspect-ratio: 1 / 1;
+	background-color: transparent;
+	border: 0.143em solid transparent;
+	border-radius: 0.286em;
+	color: inherit;
+	font-family: inherit;
+	font-weight: inherit;
+	height: 100%;
+	margin: 0;
+	padding: 0.357em;
+	width: 100%;
+}
+
+.button:hover {
+	border-color: var(--date-border-color-hover);
+}
+
+.out_of_month.cells {
+	color: var(--out-of-month-color);
+}
+
+.current_day {
+	font-weight: 500;
+}
+
+.button.selected {
+	color: #000;
+	background-color: var(--date-background-color-selected);
+}
+
+.button.selected:hover {
+	background-color: var(--date-background-color-selected-hover);
+	border-color: var(--date-border-color-selected-hover);
+}
+
+.button:disabled,
+.button.selected:disabled {
+	background-color: #fff;
+	border-color: transparent;
+	color: #bebebf;
+}
+
+.icon_lt_gt {
+	fill: #2b2b2a;
+	width: 0.375rem;
+}
+
+.icon_chevron_down {
+	fill: #9b9b9c;
+	width: 0.5rem;
+}
+
+.icon_calendar {
+	fill: #000;
+	width: 1.25em;
+}
+
+.calendar_view_selector {
+	background-color: #fafafa;
+	display: flex;
+	justify-content: space-between;
+	padding: 0.625em;
+}
+
+.type_select_button {
+	background-color: transparent;
+	border: none;
+	font-size: 14px;
+	font-family: inherit;
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	column-gap: 0.375rem;
+}
+
+.period_control_buttons {
+	display: flex;
+}
+
+.change_date_button {
+	background-color: transparent;
+	border: none;
+	line-height: 0;
+	margin: 0;
+	padding: 0 0.5rem;
+}
+
+.type_select_button.type_selected {
+	color: var(--type-button-background-color);
+}
+
+.type_select_button.type_selected .icon {
+	transform: scaleY(-100%);
+}
+
+.type_select_button:hover {
+	color: var(--type-button-background-color-hover);
+}
+
+.type_select_button:disabled {
+	color: #000;
+	opacity: 0.5;
+}
+
+.change_date_button:hover .icon {
+	fill: var(--change-date-button-background-color-hover);
+}
+
+.change_date_button:disabled {
+	opacity: 0.5;
+}
+
+.change_date_button:disabled .icon {
+	fill: #2b2b2a;
+}
+
+.calendar_month,
+.calendar_years {
+	display: grid;
+	gap: 0.125em;
+	grid-template-columns: repeat(4, 1fr);
+	margin-top: 0.5em;
+}
+
+.type_selector {
+	position: relative;
+}
+
+.selector_button,
+.open_pane_button {
+	align-items: center;
+	background-color: var(--button-background-color);
+	border: none;
+	border-radius: 0.333em;
+	column-gap: 0.333em;
+	display: flex;
+	font-size: 13px;
+	font-weight: 500;
+	font-family: inherit;
+	height: 100%;
+	margin: 0;
+	padding: 5px 10px;
+}
+
+.selector_button:hover,
+.open_pane_button:hover {
+	background-color: var(--button-background-color-hover);
+}
+
+.selector_chevron {
+	fill: #000;
+	width: 0.667em;
+}
+
+.menu {
+	background-color: var(--menu-background-color);
+	border-radius: 0.25em;
+	box-shadow: var(--float-shadow);
+	display: flex;
+	flex-direction: column;
+	list-style: none;
+	margin: 0;
+	overflow: hidden;
+	position: absolute;
+	padding: 0;
+	z-index: 1000;
+	min-width: 100%;
+}
+
+.menu_button {
+	background-color: transparent;
+	border: none;
+	font-size: 13px;
+	font-family: inherit;
+	margin: 0;
+	padding: 0.5em 1em;
+	text-align: left;
+	width: 100%;
+}
+
+.menu_button:hover {
+	background-color: #bebebf;
+}
+
+.open_pane_group {
+	position: relative;
+}
+
+.vertical_divider {
+	background-color: var(--divider-color);
+	flex-grow: 1;
+	height: 1.25em;
+	width: 0.083em;
+}
+
+.pane_float {
+	border-radius: 0.25em;
+	box-shadow: var(--float-shadow);
+	overflow: hidden;
+	position: absolute;
+	z-index: 1000;
+}
+
+.calendar_time {
+	position: relative;
+}
+
+.time_pane {
+	position: absolute;
+	bottom: 100%;
+	left: -1.6em;
+	width: 6.25em;
+	height: 240px;
+	overflow-y: auto;
+	background-color: var(--pane-background-color);
+	box-shadow: var(--float-shadow);
+	z-index: 1010;
+}
+
+.time_period {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #fafafa;
+	padding: 0.625em;
+	font-size: 14px;
+}
+
+.time_cell {
+	aspect-ratio: 2 / 1;
+	background-color: transparent;
+	border: 0.143em solid transparent;
+	border-radius: 0.286em;
+	color: inherit;
+	font-family: inherit;
+	font-weight: inherit;
+	height: 100%;
+	margin: 0;
+	padding: 0.357em;
+	width: 100%;
+}
+
+.time_cell:hover {
+	border-color: var(--date-border-color-hover);
+}
+
+.time_cell.time_cell_selected {
+	background-color: var(--date-background-color-selected);
+}
+
+.calendar_time_input {
+	width: 5em;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #fff;
+	box-shadow: none;
+	border-radius: 4px;
+	border: 1px solid #9B9B9C;
+	padding: 0.313em 0.313em 0.313em 0.75em;
+}
+
+.time_value {
+	margin-right: 0.313em;
+}
+
+:global(.kit_calendar) {
+	--float-shadow: 0 -0.063em 0.125em rgba(105, 108, 115, 0.08),
+		0 1em 1.875em 0 rgba(105, 108, 115, 0.04),
+		0 0.5em 0.75em rgba(105, 108, 115, 0.07),
+		0 0.25em 0.25em rgba(105, 108, 115, 0.09),
+		0 0.063em 0.25em rgba(105, 108, 115, 0.12);
+	--button-background-color: var(--primary-color, #fdc65f);
+	--button-background-color-hover: var(--primary-accent-color, #f9a823);
+	--date-background-color-selected: var(--primary-color, #fdc65f);
+	--date-background-color-selected-hover: var(--primary-accent-color, #f9a823);
+	--date-border-color-hover: var(--primary-color, #fdc65f);
+	--date-border-color-selected-hover: var(--primary-accent-color, #f9a823);
+	--divider-color: var(--primary-accent-color, #f9a823);
+	--menu-background-color: #fff;
+	--out-of-month-color: #bebebf;
+	--pane-background-color: #fff;
+	--type-button-background-color: var(--primary-color, #fdc65f);
+	--type-button-background-color-hover: var(--primary-accent-color, #f9a823);
+	--change-date-button-background-color-hover: var(--primary-accent-color,
+			#f9a823);
+}
