@@ -1,9 +1,7 @@
 .body {
   width: 260px;
   background: #ffffff;
-  border: 1px solid #EAEAEA;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
-  border-radius: 5px;
+
 }
 
 .d-flex {
@@ -13,8 +11,7 @@
 }
 
 .header {
-  padding: 10px 15px;
-  background-color: #FAFAFA;
+
 }
 
 .header__btn {
@@ -23,7 +20,12 @@
   display: flex;
   align-items: center;
   width: 100%;
-  background-color: #FAFAFA;
+  background-color: #FFFFFF;
+}
+
+.header__btn:hover{
+  background-color: #FFFFFF;
+  color:#2B2B2A;
 }
 
 .header__title {
@@ -42,7 +44,7 @@
 }
 
 .arrow {
-  margin-left: auto;
+  margin-right: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -53,11 +55,11 @@
 }
 
 .arrow_up .arrow-icon {
-  transform: rotate(90deg);
+  transform: rotate(0deg);
   transition: 0.4s;
 }
 
 .arrow_down .arrow-icon {
-  transform: rotate(180deg);
+  transform: rotate(-90deg);
   transition: 0.4s;
 }

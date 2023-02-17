@@ -1,0 +1,17 @@
+.item_area{
+  box-sizing: border-box;
+  display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+padding: 0px 10px;
+width: 242px;
+height: 30px;
+background-color: #FAFAFA;
+border-radius: 4px;
+}
+
+.svg_group{
+  display: flex;
+  gap:7px;
+}
