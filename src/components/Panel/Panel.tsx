@@ -26,6 +26,7 @@ const Panel: React.FC<IPanelProps> = ({
           {title && TitleBarLeftComponent ? (
             <div className="panel__title_bar_group_left">
               <div className="panel__title_left">{TitleBarLeftComponent}</div>
+
               {title ? <h2 className="panel__title">{title}</h2> : null}
             </div>
           ) : null}

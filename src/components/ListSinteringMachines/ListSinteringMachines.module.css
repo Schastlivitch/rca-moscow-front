@@ -1,0 +1,18 @@
+.body{
+  display: flex;
+  gap :49px;
+}
+.panel{
+width: fit-content;
+--body-padding: 10px 0px 0px 0px;
+--title-bar-background-color: #F4F4F4;
+--panel-title-color:#6E6E6D;
+--panel-title-font-weight:375;
+
+}
+.body_panel{
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+ 
+}
