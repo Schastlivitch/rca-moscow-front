@@ -8,9 +8,11 @@ import styles from "../TrendsPage.module.css";
 
 interface IProps {
 	items: BearingItemType[];
+	currentParam: string;
+	currentParamHandler: (param: string) => void;
 }
 
-function FilterBearings({ items }: IProps) {
+function FilterBearings({ items, currentParam, currentParamHandler }: IProps) {
 	const [isOpen, setIsOpen] = useState<boolean>(true);
 
 	const toggle = () => {
@@ -34,24 +36,34 @@ function FilterBearings({ items }: IProps) {
 							</section>
 							<section className={styles["group_item_parameters"]}>
 								<Checkbox
-									checked={false}
+									checked={currentParam === `${item.name}_temp`}
+									onChange={() => currentParamHandler(`${item.name}_temp`)}
 									name={`${item.name}_temp`}
 									title="T, °С"
 								/>
 								{item.vibration && (
 									<>
 										<Checkbox
-											checked={true}
+											checked={currentParam === `${item.name}_yVibration`}
+											onChange={() =>
+												currentParamHandler(`${item.name}_yVibration`)
+											}
 											name={`${item.name}_yVibration`}
 											title="Верт, мм/с"
 										/>
 										<Checkbox
-											checked={true}
+											checked={currentParam === `${item.name}_xVibration`}
+											onChange={() =>
+												currentParamHandler(`${item.name}_xVibration`)
+											}
 											name={`${item.name}_xVibration`}
 											title="Гориз, мм/с"
 										/>
 										<Checkbox
-											checked={true}
+											checked={currentParam === `${item.name}_axialVibration`}
+											onChange={() =>
+												currentParamHandler(`${item.name}_axialVibration`)
+											}
 											name={`${item.name}_axialVibration`}
 											title="Ось, мм/с"
 										/>

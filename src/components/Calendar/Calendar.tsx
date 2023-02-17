@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 
 import CalendarPane from "./CalendarPane";
-import CalendarTypeSelector from "./CalendarTypeSelector";
 import { IconCalendar } from "./Icons";
 import { CalendarProps, CalendarType } from "./types";
 import { formatDateByType, saveDate } from "./utils";
@@ -68,11 +67,6 @@ function Calendar({
 
 	return (
 		<div className={clsx("kit_calendar", styles.root, className)} style={style}>
-			<CalendarTypeSelector
-				selectedType={selectedType}
-				usedTypes={usedTypes}
-				onChangeType={changeCalendarType}
-			/>
 			<div className={styles.open_pane_group} ref={paneRef}>
 				<button
 					type="button"

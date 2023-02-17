@@ -1,6 +1,4 @@
-const mockChart = [
-	{
-		time: "2023-02-15T12:00:00.000Z",
-		
-	},
-];
+export const mockArray = [...Array(500)].map((item) =>
+	Math.floor(Math.random() * 100)
+);
+

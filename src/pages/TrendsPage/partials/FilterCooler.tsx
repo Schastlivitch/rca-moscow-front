@@ -8,9 +8,11 @@ import styles from "../TrendsPage.module.css";
 
 interface IProps {
 	item: CoolerType;
+	currentParam: string;
+	currentParamHandler: (param: string) => void;
 }
 
-function FilterCooler({ item }: IProps) {
+function FilterCooler({ item, currentParam, currentParamHandler }: IProps) {
 	const [isOpen, setIsOpen] = useState<boolean>(true);
 
 	const toggle = () => {
@@ -30,23 +32,27 @@ function FilterCooler({ item }: IProps) {
 					<div className={styles["group_item"]}>
 						<section className={styles["group_item_parameters"]}>
 							<Checkbox
-								checked={false}
-								name="oil_level"
+								checked={currentParam === "water_t_before"}
+								onChange={() => currentParamHandler("water_t_before")}
+								name="water_t_before"
 								title="T воды до, °С"
 							/>
 							<Checkbox
-								checked={false}
-								name="oil_pressure"
+								checked={currentParam === "water_t_after"}
+								onChange={() => currentParamHandler("water_t_after")}
+								name="water_t_after"
 								title="T воды после, °С"
 							/>
 							<Checkbox
-								checked={false}
-								name="oil_pressure"
+								checked={currentParam === "oil_t_before"}
+								onChange={() => currentParamHandler("oil_t_before")}
+								name="oil_t_before"
 								title="T масла до, °С"
 							/>
 							<Checkbox
-								checked={false}
-								name="oil_pressure"
+								checked={currentParam === "oil_t_after"}
+								onChange={() => currentParamHandler("oil_t_after")}
+								name="oil_t_after"
 								title="T масла после, °С"
 							/>
 						</section>

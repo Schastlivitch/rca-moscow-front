@@ -11,17 +11,15 @@ import Legend from "./partials/Legend";
 import styles from "./TrendsPage.module.css";
 
 function TrendsPage() {
-	const [calendarType, setCalendarType] = useState<CalendarType>(
-		CalendarType.DayTime
-	);
 	const [dates, setDates] = useState<Date[]>([]);
+	const [currentParam, setCurrentParam] = useState<string>("");
+
+	const currentParamHandler = useCallback((param: string) => {
+		setCurrentParam(param);
+	}, []);
 
 	const dateSelectHandler = useCallback((dates: Date[]) => {
 		setDates(dates);
-	}, []);
-
-	const dateTypeHandler = useCallback((type: CalendarType) => {
-		setCalendarType(type);
 	}, []);
 
 	return (
@@ -34,14 +32,16 @@ function TrendsPage() {
 				<Calendar
 					dates={dates}
 					onSelect={dateSelectHandler}
-					type={calendarType}
-					onTypeChange={dateTypeHandler}
-					usedTypes={[CalendarType.DayTime, CalendarType.PeriodWithTime]}
+					type={CalendarType.PeriodWithTime}
+					usedTypes={[CalendarType.PeriodWithTime]}
 				/>
 			</section>
 			<div className={styles["container"]}>
-				<Filter />
-				<Chart />
+				<Filter
+					currentParam={currentParam}
+					currentParamHandler={currentParamHandler}
+				/>
+				<Chart currentParam={currentParam} dates={dates} />
 			</div>
 		</Layout>
 	);

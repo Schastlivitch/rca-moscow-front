@@ -8,9 +8,11 @@ import styles from "../TrendsPage.module.css";
 
 interface IProps {
 	item: GasManifoldType;
+	currentParam: string;
+	currentParamHandler: (param: string) => void;
 }
 
-function FilterGasManifold({ item }: IProps) {
+function FilterGasManifold({ item, currentParam, currentParamHandler }: IProps) {
 	const [isOpen, setIsOpen] = useState<boolean>(true);
 
 	const toggle = () => {
@@ -31,8 +33,9 @@ function FilterGasManifold({ item }: IProps) {
 						<section className={styles["group_item_parameters"]}>
 							<Checkbox checked={false} name="oil_level" title="T газа, °С" />
 							<Checkbox
-								checked={false}
-								name="oil_pressure"
+								checked={currentParam === 'under_pressure'}
+								onChange={() => currentParamHandler("under_pressure")}
+								name="under_pressure"
 								title="Разряжение, мм.в.ст"
 							/>
 						</section>
