@@ -8,9 +8,15 @@ import styles from "../TrendsPage.module.css";
 
 interface IProps {
 	item: TransmissionType;
+	currentParam: string;
+	currentParamHandler: (param: string) => void;
 }
 
-function FilterTransmission({ item }: IProps) {
+function FilterTransmission({
+	item,
+	currentParam,
+	currentParamHandler,
+}: IProps) {
 	const [isOpen, setIsOpen] = useState<boolean>(true);
 
 	const toggle = () => {
@@ -31,18 +37,21 @@ function FilterTransmission({ item }: IProps) {
 						<section className={styles["group_item_parameters"]}>
 							<Checkbox checked={false} name="oil_level" title="Ток, А" />
 							<Checkbox
-								checked={false}
-								name="oil_pressure"
+								checked={currentParam === "amperage"}
+								onChange={() => currentParamHandler("amperage")}
+								name="amperage"
 								title="Ток двигателя, А"
 							/>
 							<Checkbox
-								checked={false}
-								name="oil_level"
-								title="Напряжение ротера, кВт"
+								checked={currentParam === "rotor_voltage"}
+								onChange={() => currentParamHandler("rotor_voltage")}
+								name="rotor_voltage"
+								title="Напряжение ротора, кВт"
 							/>
 							<Checkbox
-								checked={false}
-								name="oil_pressure"
+								checked={currentParam === "stator_voltage"}
+								onChange={() => currentParamHandler("stator_voltage")}
+								name="stator_voltage"
 								title="Напряжение статера, кВт"
 							/>
 						</section>

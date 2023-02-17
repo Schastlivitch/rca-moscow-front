@@ -8,9 +8,11 @@ import styles from "../TrendsPage.module.css";
 
 interface IProps {
 	item: OilSystemType;
+	currentParam: string;
+	currentParamHandler: (param: string) => void;
 }
 
-function FilterOil({ item }: IProps) {
+function FilterOil({ item, currentParam, currentParamHandler }: IProps) {
 	const [isOpen, setIsOpen] = useState<boolean>(true);
 
 	const toggle = () => {
@@ -30,12 +32,14 @@ function FilterOil({ item }: IProps) {
 					<div className={styles["group_item"]}>
 						<section className={styles["group_item_parameters"]}>
 							<Checkbox
-								checked={false}
+								checked={currentParam === "oil_level"}
+								onChange={() => currentParamHandler("oil_level")}
 								name="oil_level"
 								title="Уровень масла, %"
 							/>
 							<Checkbox
-								checked={false}
+								checked={currentParam === "oil_pressure"}
+								onChange={() => currentParamHandler("oil_pressure")}
 								name="oil_pressure"
 								title="Давление масла, кг/см2"
 							/>
