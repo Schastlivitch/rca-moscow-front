@@ -15,6 +15,8 @@
 }
 
 .panel__body {
+  position: relative;
+  box-sizing: border-box;
   padding: var(--body-padding);
   /* padding-top: var(--body-padding-top); */
 }
