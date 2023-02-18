@@ -37,8 +37,8 @@ export type BearingItemType = {
 };
 
 type CoolerTemperatureType = {
-	temperatureAfter: number;
-	temperatureBefore: number;
+	temperatureAfter: {value:number; status:string}
+	temperatureBefore: {value:number; status:string}
 };
 
 export type CoolerType = {
@@ -57,8 +57,8 @@ type ValveType = {
 };
 
 type ElectricalParameters = {
-	amperage: number;
-	voltage: number;
+	amperage: {value:number,status:string};
+	voltage: {value:number,status:string};
 };
 
 export type TransmissionType = {
@@ -67,6 +67,6 @@ export type TransmissionType = {
 };
 
 export type OilSystemType = {
-	level: number;
-	pressure: number;
+	level: {value:number,status:string};
+	pressure: {value:number,status:string};
 };
