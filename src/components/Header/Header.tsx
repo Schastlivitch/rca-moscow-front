@@ -7,7 +7,6 @@ import styles from "./Header.module.css";
 
 function Header() {
 	const { pathname } = useLocation();
-	const { exhausterId } = useParams() as { exhausterId: string };
 	const navigate = useNavigate();
 
 	const navigateTo = (url: string) => {
@@ -15,19 +14,34 @@ function Header() {
 	};
 
 	const currentLocationTitle: LocationItemType[] = useMemo(() => {
+		const locationItems = pathname.split("/");
 		if (pathname.includes("/trends")) {
 			return [
 				{ url: "/", title: "Главная страница" },
-				{ url: `/schema/${exhausterId}`, title: "Панель управления" },
-				{ url: `/trends/${exhausterId}`, title: "Тренды", isCurrent: true },
+				{
+					url: `/schema/${locationItems[locationItems.length - 1]}`,
+					title: "Панель управления",
+				},
+				{
+					url: `/trends/${locationItems[locationItems.length - 1]}`,
+					title: "Тренды",
+					isCurrent: true,
+				},
 			];
 		}
 
 		if (pathname.includes("/schema")) {
 			return [
 				{ url: "/", title: "Главная страница" },
-				{ url: `/schema/${exhausterId}`, title: "Панель управления", isCurrent: true },
-				{ url: `/trends/${exhausterId}`, title: "Тренды" },
+				{
+					url: `/schema/${locationItems[locationItems.length - 1]}`,
+					title: "Панель управления",
+					isCurrent: true,
+				},
+				{
+					url: `/trends/${locationItems[locationItems.length - 1]}`,
+					title: "Тренды",
+				},
 			];
 		}
 
