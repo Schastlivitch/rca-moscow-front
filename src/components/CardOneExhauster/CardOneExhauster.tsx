@@ -16,9 +16,10 @@ import clsx from "clsx";
 
 interface IProps {
 	item: ExhausterChecklistType;
+	isInactiveShown: boolean;
 }
 
-const CardOneExhauster: React.FC<IProps> = ({ item }) => {
+const CardOneExhauster: React.FC<IProps> = ({ item, isInactiveShown }) => {
 	const navigate = useNavigate();
 
 	const okData = item.bearings.filter(
@@ -36,7 +37,10 @@ const CardOneExhauster: React.FC<IProps> = ({ item }) => {
 	return (
 		<>
 			<Panel
-				className={clsx(styles.panel, !item.isWork && styles["--inactive"])}
+				className={clsx(
+					styles.panel,
+					!item.isWork && !isInactiveShown && styles["--inactive"]
+				)}
 				title={item.displayName}
 				TitleBarRightComponent={
 					<Button

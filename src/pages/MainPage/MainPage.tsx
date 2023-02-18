@@ -1,19 +1,28 @@
 // Components
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import Layout from "../../components/Layout";
 import Legend from "../../components/Legend/Legend";
 import ListSinteringMachines from "../../components/ListSinteringMachines/ListSinteringMachines";
+import useSelector from "../../hooks/useSelector";
+import Timer from "./partials/Timer";
 
 // Styles
 import styles from "./MainPage.module.css";
 
 function MainPage() {
-	const [isInactiveShown, setIsActiveShown] = useState<boolean>();
+	const [isInactiveShown, setIsActiveShown] = useState<boolean>(true);
+
+	const toggleActiveShown = useCallback(() => {
+		setIsActiveShown((prev) => !prev);
+	}, []);
 
 	return (
-		<Layout title="Главный экран">
-			<Legend />
-			<ListSinteringMachines />
+		<Layout title="Главный экран" headerRightElement={<Timer />}>
+			<Legend
+				isInactiveShown={isInactiveShown}
+				toggleActiveShown={toggleActiveShown}
+			/>
+			<ListSinteringMachines isInactiveShown={isInactiveShown} />
 		</Layout>
 	);
 }

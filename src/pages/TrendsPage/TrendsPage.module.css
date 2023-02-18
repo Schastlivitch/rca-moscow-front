@@ -43,10 +43,8 @@
 }
 
 .filter_header {
-	display: grid;
-	grid-template-columns: minmax(0, 1fr) 70px;
 	font-weight: 375;
-	font-size: 13px;
+	font-size: 15px;
 	gap: 4px;
 }
 
@@ -71,6 +69,25 @@
 	gap: 4px;
 	font-weight: 375;
 	font-size: 14px;
+	align-items: center;
+}
+
+.group_header > button {
+	width: 25px;
+	height: 25px;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.group_header > button > svg {
+	transform: rotate(-90deg);
+	transition: transform 0.2s ease-in-out;
+}
+
+.group_header.--open > button > svg {
+	transform: rotate(0);
 }
 
 .group_title {
@@ -84,6 +101,8 @@
 	padding: 10px;
 	background-color: var(--color-gray-3);
 	border-radius: 5px;
+	font-size: 14px;
+	font-weight: 375;
 }
 
 .group_item:not(:last-child) {

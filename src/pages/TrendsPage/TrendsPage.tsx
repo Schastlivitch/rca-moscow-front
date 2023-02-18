@@ -5,14 +5,13 @@ import { CalendarType } from "../../components/Calendar/types";
 import Layout from "../../components/Layout";
 import Chart from "./partials/Chart";
 import Filter from "./partials/Filter";
-import Legend from "./partials/Legend";
 
 // Styles
 import styles from "./TrendsPage.module.css";
 
 function TrendsPage() {
 	const [dates, setDates] = useState<Date[]>([]);
-	const [currentParam, setCurrentParam] = useState<string>("");
+	const [currentParam, setCurrentParam] = useState<string>("oil_level");
 
 	const currentParamHandler = useCallback((param: string) => {
 		setCurrentParam(param);
@@ -23,11 +22,7 @@ function TrendsPage() {
 	}, []);
 
 	return (
-		<Layout
-			title="Тренды"
-			headerRightElement={<Legend />}
-			className={styles["root"]}
-		>
+		<Layout title="Тренды" className={styles["root"]}>
 			<section className={styles["control"]}>
 				<Calendar
 					dates={dates}
