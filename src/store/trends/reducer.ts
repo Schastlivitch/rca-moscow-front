@@ -5,6 +5,7 @@ const initialState: ITrendsReducer = {
 	chart: [],
 	timestamp: null,
 	isLoading: false,
+	mockIndex: 0,
 };
 
 const reducer = (
@@ -19,10 +20,11 @@ const reducer = (
 			};
 
 		case actionTypes.GET_TRENDS_SUCCESS:
-			const chart = action.payload as TrendChartType;
+			const chart = action.payload as TrendChartType[];
 
 			return {
-				chart,
+				chart: chart[state.mockIndex],
+				mockIndex: state.mockIndex < 5 ? state.mockIndex + 1 : state.mockIndex,
 				timestamp: new Date().toISOString(),
 				isLoading: false,
 			};
