@@ -24,12 +24,12 @@ declare global {
 
 function App() {
 	useEffect(() => {
-		window.io = io;
-		window.echo = new Echo({
-			broadcaster: "socket.io",
-			host: "http://socket-url.com",
-			transport: ["websocket", "polling", "flashsocket"],
-		});
+		// window.io = io;
+		// window.echo = new Echo({
+		// 	broadcaster: "socket.io",
+		// 	host: "http://socket-url.com",
+		// 	transport: ["websocket", "polling", "flashsocket"],
+		// });
 	}, []);
 
 	return (

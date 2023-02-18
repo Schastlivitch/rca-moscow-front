@@ -17,13 +17,13 @@ function MainPage() {
 	}, []);
 
 	useEffect(() => {
-		window.echo.private("channel_name").listen("event_name", () => {
-			console.log("ping");
-		});
+		// window.echo.private("channel_name").listen("event_name", () => {
+		// 	console.log("ping");
+		// });
 
-		return () => {
-			window.echo.leave("channel_name");
-		};
+		// return () => {
+		// 	window.echo.leave("channel_name");
+		// };
 	}, []);
 
 	return (
