@@ -5,7 +5,7 @@ import Panel from "../Panel";
 import { ReactComponent as CircleAlert } from "../../assets/isWorkAlertCircle.svg";
 import { ReactComponent as CircleOk } from "../../assets/isWorkOkCircle.svg";
 import { ReactComponent as ButtonArrow } from "../../assets/buttonArrow.svg";
-import ExshausterPreview from "../SvgComponents/ExshausterPreview/ExshausterPreview";
+import ExshausterCanvas from "../SvgComponents/ExshausterPreview/ExhausterCanvas";
 import styles from "./CardOneExhauster.module.css";
 import ItemsList from "../Accordion/partials/ItemsList";
 import { useNavigate } from "react-router-dom";
@@ -64,7 +64,7 @@ const CardOneExhauster: React.FC<IProps> = ({ item }) => {
 							</div>
 						</div>
 					</div>
-					<ExshausterPreview />
+					<ExshausterCanvas />
 					<Accordion title="Предупреждение" isPreOpened>
 						<ItemsList
 							listItems={alertData}

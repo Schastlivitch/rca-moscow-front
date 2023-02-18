@@ -21,13 +21,6 @@ interface Bearings {
 
 const ItemsList: React.FC<IListItems> = ({ listItems, oilLevel }) => {
   const dispatch = useDispatch();
-  // const handlerOverMouse = () => {
-  //   const handleClickTypePass = (e: React.MouseEvent<HTMLElement>) => {
-  //     const element = e.target as HTMLInputElement;
-  //     const updateValue = { ...inputRadioValue, typePass: element.value };
-  //     setRadioInputValue(updateValue);
-  //   };
-  // };
   return (
     <div>
       {listItems
