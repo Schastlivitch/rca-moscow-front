@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Mnemo.module.css";
+// import styles from "./Mnemo.module.css";
 
 interface IProp {}
 
@@ -27,7 +27,7 @@ const CardOneItem: React.FC = () => {
       />
       <rect x="21.3262" y="21.209" width="99" height="20" stroke="#8D9595" />
       <foreignObject
-        className={styles.header_one}
+        // className={styles.header_one}
         x="23"
         y="24"
         width="95"
@@ -52,13 +52,13 @@ const CardOneItem: React.FC = () => {
       />
 
       <foreignObject
-        className={styles.item_first}
+        // className={styles.item_first}
         x="20.8262"
         y="48.709"
         width="100"
         height="19"
       >
-        <div className={styles.item_first_count}>250</div>
+        {/* <div className={styles.item_first_count}>250</div> */}
       </foreignObject>
     </svg>
   );
