@@ -69,6 +69,7 @@ const initialState: ISchemaReducer = {
 	timestamp: null,
 	isWork: false,
 	isLoading: false,
+	mockIndex: 0,
 };
 
 const reducer = (
@@ -83,12 +84,13 @@ const reducer = (
 			};
 
 		case actionTypes.GET_SCHEMA_SUCCESS:
-			const payload = action.payload as IExhausterParameters;
+			const payload = action.payload as IExhausterParameters[];
 
 			return {
 				...state,
-				...payload,
+				...payload[state.mockIndex],
 				timestamp: new Date().toISOString(),
+				mockIndex: state.mockIndex < 5 ? state.mockIndex + 1 : state.mockIndex,
 				isLoading: false,
 			};
 

@@ -5,32 +5,32 @@ import Button from "../Button";
 import styles from "./Legend.module.css";
 
 interface IProps {
-  isInactiveShown: boolean;
-  toggleActiveShown: () => void;
+	isInactiveShown: boolean;
+	toggleActiveShown: () => void;
 }
 
 const Legend: React.FC<IProps> = ({ isInactiveShown, toggleActiveShown }) => {
-  const error = true;
-  return (
-    <div className={styles.body}>
-      <Button
-        className={clsx(styles.button, isInactiveShown && styles["--active"])}
-        onClick={toggleActiveShown}
-      >
-        {isInactiveShown
-          ? "Скрывать неактивные "
-          : "Показать неактивные эксгаустеры"}
-      </Button>
-      {error ? (
-        <div className={styles.alert_area}>
-          <div className={styles.alert_text}>ошибка получения данных</div>
-          <div className={styles.mgo_widget_call_pulse}> </div>
-        </div>
-      ) : null}
+	const error = false;
+	return (
+		<div className={styles.body}>
+			<Button
+				className={clsx(styles.button, isInactiveShown && styles["--active"])}
+				onClick={toggleActiveShown}
+			>
+				{isInactiveShown
+					? "Скрывать неактивные "
+					: "Показать неактивные эксгаустеры"}
+			</Button>
+			{error ? (
+				<div className={styles.alert_area}>
+					<div className={styles.alert_text}>Ошибка получения данных</div>
+					<div className={styles.mgo_widget_call_pulse}> </div>
+				</div>
+			) : null}
 
-      <LegendSvg />
-    </div>
-  );
+			<LegendSvg />
+		</div>
+	);
 };
 
 export default Legend;

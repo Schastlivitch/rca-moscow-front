@@ -2,6 +2,7 @@ export interface ISchemaReducer extends IExhausterParameters {
 	isLoading: boolean;
 	displayName: string;
 	timestamp: string | null;
+	mockIndex: number;
 }
 
 export interface IExhausterParameters {
