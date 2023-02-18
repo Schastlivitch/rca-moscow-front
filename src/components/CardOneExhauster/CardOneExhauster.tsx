@@ -64,7 +64,7 @@ const CardOneExhauster: React.FC<IProps> = ({ item }) => {
 							</div>
 						</div>
 					</div>
-					<ExshausterPreview className={styles["preview"]} />
+					<ExshausterPreview />
 					<Accordion title="Предупреждение" isPreOpened>
 						<ItemsList
 							listItems={alertData}
