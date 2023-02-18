@@ -20,7 +20,7 @@ const ListSinteringMachines: React.FC<IProps> = ({ isInactiveShown }) => {
 
 		setInterval(() => {
 			dispatch(getMachinesAction());
-		}, 1000 * 11);
+		}, 1000 * 60);
 	}, [dispatch]);
 
 	return (

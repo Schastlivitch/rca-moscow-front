@@ -10,7 +10,7 @@ import styles from "./CardOneExhauster.module.css";
 import ItemsList from "../Accordion/partials/ItemsList";
 import { useNavigate } from "react-router-dom";
 import { ExhausterChecklistType } from "../../store/main/types";
-import { format } from "date-fns";
+import { differenceInDays, format } from "date-fns";
 import { ru } from "date-fns/locale";
 import clsx from "clsx";
 import { useDispatch } from "react-redux";
@@ -67,7 +67,9 @@ const CardOneExhauster: React.FC<IProps> = ({ item, isInactiveShown }) => {
 					<div className={styles.separator}></div>
 					<p className={styles.repair}>Последняя замена ротора</p>
 					<div className={styles.update_group}>
-						<div className={styles.rotor_update_day}>3 сут</div>
+						<div className={styles.rotor_update_day}>
+							{differenceInDays(new Date(), new Date(item.rotorChangeDate))} сут
+						</div>
 						<div className={styles.update_group_forecast}>
 							<div className={styles.update_forecast_title}>Прогноз</div>
 							<div className={styles.update_forecast_day}>

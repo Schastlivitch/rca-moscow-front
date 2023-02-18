@@ -10,7 +10,7 @@ const mockMachinesList: SinteringMachineType[] = [
 				displayName: "Эксгаустер У-171",
 				isWork: true,
 				rotorName: "35к",
-				rotorChangeDate: "2011-10-05T14:48:00.000Z",
+				rotorChangeDate: "2023-02-16T14:48:00.000Z",
 				rotorChangePrediction: 10,
 				oilLevel: "ok",
 				bearings: [
@@ -75,7 +75,7 @@ const mockMachinesList: SinteringMachineType[] = [
 				displayName: "Эксгаустер У-172",
 				isWork: false,
 				rotorName: "36к",
-				rotorChangeDate: "2011-10-05T14:48:00.000Z",
+				rotorChangeDate: "2023-02-14T14:48:00.000Z",
 				rotorChangePrediction: 10,
 				oilLevel: "ok",
 				bearings: [
@@ -146,7 +146,7 @@ const mockMachinesList: SinteringMachineType[] = [
 				displayName: "Эксгаустер У-173",
 				isWork: true,
 				rotorName: "37к",
-				rotorChangeDate: "2011-10-05T14:48:00.000Z",
+				rotorChangeDate: "2023-02-10T14:48:00.000Z",
 				rotorChangePrediction: 10,
 				oilLevel: "warning",
 				bearings: [
@@ -211,7 +211,7 @@ const mockMachinesList: SinteringMachineType[] = [
 				displayName: "Эксгаустер У-174",
 				isWork: false,
 				rotorName: "39к",
-				rotorChangeDate: "2011-10-05T14:48:00.000Z",
+				rotorChangeDate: "2023-02-17T14:48:00.000Z",
 				rotorChangePrediction: 10,
 				oilLevel: "alert",
 				bearings: [
@@ -282,7 +282,7 @@ const mockMachinesList: SinteringMachineType[] = [
 				displayName: "Эксгаустер У-175",
 				isWork: true,
 				rotorName: "35к",
-				rotorChangeDate: "2011-10-05T14:48:00.000Z",
+				rotorChangeDate: "2023-02-15T14:48:00.000Z",
 				rotorChangePrediction: 10,
 				oilLevel: "ok",
 				bearings: [
@@ -347,7 +347,7 @@ const mockMachinesList: SinteringMachineType[] = [
 				displayName: "Эксгаустер У-176",
 				isWork: false,
 				rotorName: "36к",
-				rotorChangeDate: "2011-10-05T14:48:00.000Z",
+				rotorChangeDate: "2023-02-16T14:48:00.000Z",
 				rotorChangePrediction: 10,
 				oilLevel: "alert",
 				bearings: [

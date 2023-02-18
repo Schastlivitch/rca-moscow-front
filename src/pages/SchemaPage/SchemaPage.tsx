@@ -23,7 +23,7 @@ function ControlPage() {
 
 		setInterval(() => {
 			dispatch(getSchemaAction(id));
-		}, 1000 * 11);
+		}, 1000 * 60);
 	}, [dispatch]);
 
 	const { isLoading, displayName } = useSelector((state) => state.schema);
