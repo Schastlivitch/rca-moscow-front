@@ -10,7 +10,7 @@ export type SinteringMachineType = {
 	exhausters: ExhausterChecklistType[];
 };
 
-type ExhausterChecklistType = {
+export type ExhausterChecklistType = {
 	name: string;
 	displayName: string;
 	isWork: boolean;

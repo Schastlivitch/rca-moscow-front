@@ -8,81 +8,83 @@ import { ReactComponent as ButtonArrow } from "../../assets/buttonArrow.svg";
 import ExshausterPreview from "../SvgComponents/ExshausterPreview/ExshausterPreview";
 import styles from "./CardOneExhauster.module.css";
 import ItemsList from "../Accordion/partials/ItemsList";
+import { useNavigate } from "react-router-dom";
+import { ExhausterChecklistType } from "../../store/main/types";
+import { format } from "date-fns";
+import { ru } from "date-fns/locale";
+import clsx from "clsx";
 
-interface IPropExhauster {
-  data: Data;
-}
-interface Data {
-  displayName: string;
-  isWork: boolean;
-  rotorName: string;
-  rotorChangeDate: string;
-  rotorChangePrediction: number;
-  bearings: Bearings[];
-  oilLevel: string;
-}
-interface Bearings {
-  [key: string]: string;
+interface IProps {
+	item: ExhausterChecklistType;
 }
 
-const CardOneExhauster: React.FC<IPropExhauster> = ({ data }) => {
-  const okData = data.bearings.filter(
-    (el) => el.temperature === "ok" && el.vibration === "ok"
-  );
-  const alertData = data.bearings.filter(
-    (el) => el.temperature !== "ok" || el.vibration !== "ok"
-  );
+const CardOneExhauster: React.FC<IProps> = ({ item }) => {
+	const navigate = useNavigate();
 
-  const rotorDate = data.rotorChangeDate.slice(0, 10);
-  return (
-    <>
-      <Panel
-        className={styles.panel}
-        title={data.displayName}
-        TitleBarRightComponent={
-          <Button className={styles.button_header}>
-            <ButtonArrow />
-          </Button>
-        }
-        TitleBarLeftComponent={data.isWork ? <CircleOk /> : <CircleAlert />}
-      >
-        <div>
-          <div className={styles.group_rotor}>
-            <p className={styles.title_rotor}>Ротор № {data.rotorName}</p>
-            <div className={styles.rotor_data}>{rotorDate}</div>
-          </div>
-          <div className={styles.separator}></div>
-          <p className={styles.repair}>Последняя замена ротора</p>
-          <div className={styles.update_group}>
-            <div className={styles.rotor_update_day}>3 сут</div>
-            <div className={styles.update_group_forecast}>
-              <div className={styles.update_forecast_title}>Прогноз</div>
-              <div className={styles.update_forecast_day}>
-                {data.rotorChangePrediction} сут
-              </div>
-            </div>
-          </div>
-          <ExshausterPreview />
-          <Accordion title="Предупреждение">
-            <ItemsList
-              listItems={alertData}
-              oilLevel={
-                data.oilLevel === "warning" || data.oilLevel === "alert"
-                  ? "alert"
-                  : undefined
-              }
-            />
-          </Accordion>
-          <Accordion title="Все подшипники">
-            <ItemsList
-              listItems={okData}
-              oilLevel={data.oilLevel === "ok" ? "ok" : undefined}
-            />
-          </Accordion>
-        </div>
-      </Panel>
-    </>
-  );
+	const okData = item.bearings.filter(
+		(bearing) => bearing.temperature === "ok" && bearing.vibration === "ok"
+	);
+
+	const alertData = item.bearings.filter(
+		(bearing) => bearing.temperature !== "ok" || bearing.vibration !== "ok"
+	);
+
+	const rotorDate = format(new Date(item.rotorChangeDate), "dd MMM yyyy", {
+		locale: ru,
+	});
+
+	return (
+		<>
+			<Panel
+				className={clsx(styles.panel, !item.isWork && styles["--inactive"])}
+				title={item.displayName}
+				TitleBarRightComponent={
+					<Button
+						className={styles.button_header}
+						onClick={() => navigate(`/schema/${item.name}`)}
+					>
+						<ButtonArrow />
+					</Button>
+				}
+				TitleBarLeftComponent={item.isWork ? <CircleOk /> : <CircleAlert />}
+			>
+				<div>
+					<div className={styles.group_rotor}>
+						<p className={styles.title_rotor}>Ротор № {item.rotorName}</p>
+						<div className={styles.rotor_data}>{rotorDate}</div>
+					</div>
+					<div className={styles.separator}></div>
+					<p className={styles.repair}>Последняя замена ротора</p>
+					<div className={styles.update_group}>
+						<div className={styles.rotor_update_day}>3 сут</div>
+						<div className={styles.update_group_forecast}>
+							<div className={styles.update_forecast_title}>Прогноз</div>
+							<div className={styles.update_forecast_day}>
+								{item.rotorChangePrediction} сут
+							</div>
+						</div>
+					</div>
+					<ExshausterPreview className={styles["preview"]} />
+					<Accordion title="Предупреждение" isPreOpened>
+						<ItemsList
+							listItems={alertData}
+							oilLevel={
+								item.oilLevel === "warning" || item.oilLevel === "alert"
+									? "alert"
+									: undefined
+							}
+						/>
+					</Accordion>
+					<Accordion title="Все подшипники">
+						<ItemsList
+							listItems={okData}
+							oilLevel={item.oilLevel === "ok" ? "ok" : undefined}
+						/>
+					</Accordion>
+				</div>
+			</Panel>
+		</>
+	);
 };
 
 export default CardOneExhauster;

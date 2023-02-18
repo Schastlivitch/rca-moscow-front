@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { LocationItemType } from "../../types";
 
@@ -7,6 +7,7 @@ import styles from "./Header.module.css";
 
 function Header() {
 	const { pathname } = useLocation();
+	const { exhausterId } = useParams() as { exhausterId: string };
 	const navigate = useNavigate();
 
 	const navigateTo = (url: string) => {
@@ -17,14 +18,16 @@ function Header() {
 		if (pathname.includes("/trends")) {
 			return [
 				{ url: "/", title: "Главная страница" },
-				{ url: "/trends", title: "Тренды", isCurrent: true },
+				{ url: `/schema/${exhausterId}`, title: "Панель управления" },
+				{ url: `/trends/${exhausterId}`, title: "Тренды", isCurrent: true },
 			];
 		}
 
 		if (pathname.includes("/schema")) {
 			return [
 				{ url: "/", title: "Главная страница" },
-				{ url: "/schema", title: "Панель управления", isCurrent: true },
+				{ url: `/schema/${exhausterId}`, title: "Панель управления", isCurrent: true },
+				{ url: `/trends/${exhausterId}`, title: "Тренды" },
 			];
 		}
 
