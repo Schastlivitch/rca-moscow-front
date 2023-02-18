@@ -1,5 +1,6 @@
 // Components
 import { useCallback, useState } from "react";
+import { useDispatch } from "react-redux";
 import Calendar from "../../components/Calendar";
 import { CalendarType } from "../../components/Calendar/types";
 import Layout from "../../components/Layout";
@@ -10,6 +11,7 @@ import Filter from "./partials/Filter";
 import styles from "./TrendsPage.module.css";
 
 function TrendsPage() {
+
 	const [dates, setDates] = useState<Date[]>([]);
 	const [currentParam, setCurrentParam] = useState<string>("oil_level");
 
