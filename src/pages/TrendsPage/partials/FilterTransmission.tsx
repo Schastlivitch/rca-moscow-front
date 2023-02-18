@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { useState } from "react";
 import { ReactComponent as ArrowIcon } from "../../../assets/arrow.svg";
 import Checkbox from "../../../components/Checkbox";
@@ -25,7 +26,9 @@ function FilterTransmission({
 
 	return (
 		<div className={styles["filter_group"]}>
-			<section className={styles["group_header"]}>
+			<section
+				className={clsx(styles["group_header"], isOpen && styles["--open"])}
+			>
 				<button type="button" onClick={toggle}>
 					<ArrowIcon />
 				</button>

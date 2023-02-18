@@ -20,8 +20,8 @@ function Filter({ currentParam, currentParamHandler }: IProps) {
 	return (
 		<div className={styles["filter"]}>
 			<section className={styles["filter_header"]}>
-				<div className={styles["header_item"]}>Агрегат</div>
-				<div className={styles["header_item"]}>Значение</div>
+				<div className={styles["header_item"]}>Показать тренды для параметра:</div>
+				{/* <div className={styles["header_item"]}>Значение</div> */}
 			</section>
 			<section className={styles["filter_body"]}>
 				<FilterBearings
