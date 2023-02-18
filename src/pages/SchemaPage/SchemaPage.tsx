@@ -18,7 +18,7 @@ function ControlPage() {
   return (
     <Layout title="Эксгаустер" headerRightElement={<Legend />}>
       <div className={styles["root"]}>
-        <MnemoSheme />
+        {/* <MnemoSheme /> */}
       </div>
     </Layout>
   );
