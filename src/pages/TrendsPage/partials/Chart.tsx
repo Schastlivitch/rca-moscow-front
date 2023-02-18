@@ -1,9 +1,11 @@
 import { addHours } from "date-fns";
 import ReactEcharts from "echarts-for-react";
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import useSelector from "../../../hooks/useSelector";
+import { getTrendsAction } from "../../../store/trends";
 import chartDataConverter from "../../../Utils/chartDataConverter";
-import { mockArray } from "../mock";
 
 // Styles
 import styles from "../TrendsPage.module.css";
@@ -14,15 +16,20 @@ interface IProps {
 }
 
 function Chart({ currentParam, dates }: IProps) {
+	const dispatch = useDispatch();
+
 	const urlParams = useParams() as {
 		exhausterId: string;
 	};
 
-	const option = chartDataConverter("Test", dates[0], mockArray);
+	const chart = useSelector((state) => state.trends.chart);
+
+	const option = chartDataConverter(currentParam, dates[0], chart);
+
+	console.log(chart);
 
 	useEffect(() => {
-		console.log(dates[0] || addHours(new Date(), -4));
-		console.log(dates[1] || new Date());
+		dispatch(getTrendsAction());
 	}, [currentParam, dates, urlParams.exhausterId]);
 
 	return (
