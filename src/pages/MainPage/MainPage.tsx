@@ -1,5 +1,5 @@
 // Components
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Layout from "../../components/Layout";
 import Legend from "../../components/Legend/Legend";
 import ListSinteringMachines from "../../components/ListSinteringMachines/ListSinteringMachines";
@@ -14,6 +14,16 @@ function MainPage() {
 
 	const toggleActiveShown = useCallback(() => {
 		setIsActiveShown((prev) => !prev);
+	}, []);
+
+	useEffect(() => {
+		window.echo.private("channel_name").listen("event_name", () => {
+			console.log("ping");
+		});
+
+		return () => {
+			window.echo.leave("channel_name");
+		};
 	}, []);
 
 	return (
