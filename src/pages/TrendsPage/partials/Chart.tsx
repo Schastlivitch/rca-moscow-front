@@ -26,8 +26,6 @@ function Chart({ currentParam, dates }: IProps) {
 
 	const option = chartDataConverter(currentParam, dates[0], chart);
 
-	console.log(chart);
-
 	useEffect(() => {
 		dispatch(getTrendsAction());
 	}, [currentParam, dates, urlParams.exhausterId]);

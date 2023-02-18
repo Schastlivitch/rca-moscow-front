@@ -13,6 +13,8 @@ import { ExhausterChecklistType } from "../../store/main/types";
 import { format } from "date-fns";
 import { ru } from "date-fns/locale";
 import clsx from "clsx";
+import { useDispatch } from "react-redux";
+import { setExhausterNameAction } from "../../store/schema";
 
 interface IProps {
 	item: ExhausterChecklistType;
@@ -20,6 +22,7 @@ interface IProps {
 }
 
 const CardOneExhauster: React.FC<IProps> = ({ item, isInactiveShown }) => {
+	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
 	const okData = item.bearings.filter(
@@ -34,6 +37,13 @@ const CardOneExhauster: React.FC<IProps> = ({ item, isInactiveShown }) => {
 		locale: ru,
 	});
 
+	const onClickHandler = () => {
+		dispatch(
+			setExhausterNameAction(item.displayName.replace("Эксгаустер ", ""))
+		);
+		navigate(`/schema/${item.name}`);
+	};
+
 	return (
 		<>
 			<Panel
@@ -43,10 +53,7 @@ const CardOneExhauster: React.FC<IProps> = ({ item, isInactiveShown }) => {
 				)}
 				title={item.displayName}
 				TitleBarRightComponent={
-					<Button
-						className={styles.button_header}
-						onClick={() => navigate(`/schema/${item.name}`)}
-					>
+					<Button className={styles.button_header} onClick={onClickHandler}>
 						<ButtonArrow />
 					</Button>
 				}

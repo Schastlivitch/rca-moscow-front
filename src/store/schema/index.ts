@@ -15,3 +15,8 @@ export const getSchemaAction = (exhausterId: string) => {
 			});
 	};
 };
+
+export const setExhausterNameAction = (payload: string) => ({
+	type: actionTypes.SET_EXHAUSTER_NAME,
+	payload,
+});

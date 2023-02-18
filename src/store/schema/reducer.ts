@@ -5,12 +5,24 @@ const initialState: ISchemaReducer = {
 	bearings: [],
 	cooler: {
 		oil: {
-			temperatureAfter: 0,
-			temperatureBefore: 0,
+			temperatureAfter: {
+				status: "ok",
+				value: 0,
+			},
+			temperatureBefore: {
+				status: "ok",
+				value: 0,
+			},
 		},
 		water: {
-			temperatureAfter: 0,
-			temperatureBefore: 0,
+			temperatureAfter: {
+				status: "ok",
+				value: 0,
+			},
+			temperatureBefore: {
+				status: "ok",
+				value: 0,
+			},
 		},
 	},
 	gasManifold: {
@@ -18,23 +30,42 @@ const initialState: ISchemaReducer = {
 		underPressure: 0,
 	},
 	oilSystem: {
-		level: 0,
-		pressure: 0,
+		level: {
+			status: "ok",
+			value: 0,
+		},
+		pressure: {
+			status: "ok",
+			value: 0,
+		},
 	},
 	transmission: {
 		rotor: {
-			amperage: 0,
-			voltage: 0,
+			amperage: {
+				status: "ok",
+				value: 0,
+			},
+			voltage: {
+				status: "ok",
+				value: 0,
+			},
 		},
 		stator: {
-			amperage: 0,
-			voltage: 0,
+			amperage: {
+				status: "ok",
+				value: 0,
+			},
+			voltage: {
+				status: "ok",
+				value: 0,
+			},
 		},
 	},
 	valve: {
 		isOpen: false,
 		position: 0,
 	},
+	displayName: "",
 	timestamp: null,
 	isWork: false,
 	isLoading: false,
@@ -55,6 +86,7 @@ const reducer = (
 			const payload = action.payload as IExhausterParameters;
 
 			return {
+				...state,
 				...payload,
 				timestamp: new Date().toISOString(),
 				isLoading: false,
@@ -64,6 +96,14 @@ const reducer = (
 			return {
 				...state,
 				isLoading: false,
+			};
+
+		case actionTypes.SET_EXHAUSTER_NAME:
+			const displayName = action.payload as string;
+
+			return {
+				...state,
+				displayName,
 			};
 
 		default:

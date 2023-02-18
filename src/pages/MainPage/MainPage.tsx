@@ -16,18 +16,23 @@ function MainPage() {
 		setIsActiveShown((prev) => !prev);
 	}, []);
 
+	const isLoading = useSelector((state) => state.main.isLoading);
+
 	useEffect(() => {
 		// window.echo.private("channel_name").listen("event_name", () => {
 		// 	console.log("ping");
 		// });
-
 		// return () => {
 		// 	window.echo.leave("channel_name");
 		// };
 	}, []);
 
 	return (
-		<Layout title="Главный экран" headerRightElement={<Timer />}>
+		<Layout
+			title="Главный экран"
+			headerRightElement={<Timer />}
+			isLoading={isLoading}
+		>
 			<Legend
 				isInactiveShown={isInactiveShown}
 				toggleActiveShown={toggleActiveShown}
