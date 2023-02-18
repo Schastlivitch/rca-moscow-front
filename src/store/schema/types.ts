@@ -16,11 +16,23 @@ export interface IExhausterParameters {
 export type BearingItemType = {
 	name: string;
 	displayName: string;
-	temperature: number;
+	temperature:{
+    value: number
+    status: string
+  }
 	vibration?: {
-		axial: number;
-		vertical: number;
-		horizontal: number;
+		axial: {
+      value: number
+      status: string
+    }
+		vertical:{
+      value: number
+      status: string
+    }
+		horizontal: {
+      value: number
+      status: string
+    }
 	};
 };
 

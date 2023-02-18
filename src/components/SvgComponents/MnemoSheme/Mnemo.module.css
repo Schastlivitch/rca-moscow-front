@@ -1,0 +1,38 @@
+.header_one{
+  background-color: #414F4F;
+  font-family: 'GT Eesti Pro Text';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 17px;
+display: flex;
+align-items: center;
+text-align: center;
+color: #FFFFFF;
+}
+.item_first{
+  font-family: 'GT Eesti Pro Text';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+}
+.item_first_count{
+  font-family: 'GT Eesti Pro Text';
+font-style: normal;
+font-weight: 500;
+font-size: 13px;
+line-height: 15px;
+  color: #FFFFFF;
+  display: flex;
+justify-content: end;
+align-items: center;
+  margin-top: 2px;
+  margin-left: 45px;
+  width: 50px;
+  height: 16px;
+}
