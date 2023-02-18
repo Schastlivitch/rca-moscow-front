@@ -9,42 +9,56 @@ import Legend from "./partials/Legend";
 
 // Styles
 import styles from "./SchemaPage.module.css";
+import Counter from "./partials/Timer";
 
 function ControlPage() {
-  const id = "1";
-  const dispatch = useDispatch();
+	const id = "1";
+	const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getSchemaAction(id));
-  }, [dispatch]);
+	// useEffect(() => {
+	// 	dispatch(getSchemaAction(id));
+	// }, [dispatch]);
+	useEffect(() => {
+		dispatch(getSchemaAction(id));
 
-  const data = useSelector((state) => {
-    return state.schema.bearings;
-  });
-  const transmission = useSelector((state) => {
-    return state.schema.transmission;
-  });
-  const cooler = useSelector((state) => {
-    return state.schema.cooler;
-  });
-  const oil = useSelector((state) => {
-    return state.schema.oilSystem;
-  });
+		setInterval(() => {
+			dispatch(getSchemaAction(id));
+		}, 1000 * 11);
+	}, [dispatch]);
 
-  return (
-    <Layout title="Эксгаустер" headerRightElement={<Legend />}>
-      <div className={styles["root"]}>
-        {Boolean(data.length) && (
-          <MnemoSheme
-            data={data}
-            transmission={transmission}
-            cooler={cooler}
-            oil={oil}
-          />
-        )}
-      </div>
-    </Layout>
-  );
+	const { isLoading, displayName } = useSelector((state) => state.schema);
+
+	const data = useSelector((state) => {
+		return state.schema.bearings;
+	});
+	const transmission = useSelector((state) => {
+		return state.schema.transmission;
+	});
+	const cooler = useSelector((state) => {
+		return state.schema.cooler;
+	});
+	const oil = useSelector((state) => {
+		return state.schema.oilSystem;
+	});
+
+	return (
+		<Layout
+			title={`Эксгаустер ${displayName}`}
+			headerRightElement={<Counter />}
+			isLoading={isLoading}
+		>
+			<div className={styles["root"]}>
+				{Boolean(data.length) && (
+					<MnemoSheme
+						data={data}
+						transmission={transmission}
+						cooler={cooler}
+						oil={oil}
+					/>
+				)}
+			</div>
+		</Layout>
+	);
 }
 
 export default ControlPage;

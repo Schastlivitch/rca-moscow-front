@@ -1,5 +1,6 @@
 export interface ISchemaReducer extends IExhausterParameters {
 	isLoading: boolean;
+	displayName: string;
 	timestamp: string | null;
 }
 
@@ -16,29 +17,29 @@ export interface IExhausterParameters {
 export type BearingItemType = {
 	name: string;
 	displayName: string;
-	temperature:{
-    value: number
-    status: string
-  }
+	temperature: {
+		value: number;
+		status: "ok" | "warning" | "alert";
+	};
 	vibration?: {
 		axial: {
-      value: number
-      status: string
-    }
-		vertical:{
-      value: number
-      status: string
-    }
+			value: number;
+			status: "ok" | "warning" | "alert";
+		};
+		vertical: {
+			value: number;
+			status: "ok" | "warning" | "alert";
+		};
 		horizontal: {
-      value: number
-      status: string
-    }
+			value: number;
+			status: "ok" | "warning" | "alert";
+		};
 	};
 };
 
 type CoolerTemperatureType = {
-	temperatureAfter: {value:number; status:string}
-	temperatureBefore: {value:number; status:string}
+	temperatureAfter: { value: number; status: "ok" | "warning" | "alert" };
+	temperatureBefore: { value: number; status: "ok" | "warning" | "alert" };
 };
 
 export type CoolerType = {
@@ -57,8 +58,8 @@ type ValveType = {
 };
 
 type ElectricalParameters = {
-	amperage: {value:number,status:string};
-	voltage: {value:number,status:string};
+	amperage: { value: number; status: string };
+	voltage: { value: number; status: string };
 };
 
 export type TransmissionType = {
@@ -67,6 +68,6 @@ export type TransmissionType = {
 };
 
 export type OilSystemType = {
-	level: {value:number,status:string};
-	pressure: {value:number,status:string};
+	level: { value: number; status: string };
+	pressure: { value: number; status: string };
 };

@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import Calendar from "../../components/Calendar";
 import { CalendarType } from "../../components/Calendar/types";
 import Layout from "../../components/Layout";
+import useSelector from "../../hooks/useSelector";
 import Chart from "./partials/Chart";
 import Filter from "./partials/Filter";
 
@@ -15,6 +16,8 @@ function TrendsPage() {
 	const [dates, setDates] = useState<Date[]>([]);
 	const [currentParam, setCurrentParam] = useState<string>("oil_level");
 
+	const isLoading = useSelector((state) => state.trends.isLoading);
+
 	const currentParamHandler = useCallback((param: string) => {
 		setCurrentParam(param);
 	}, []);
@@ -24,7 +27,7 @@ function TrendsPage() {
 	}, []);
 
 	return (
-		<Layout title="Тренды" className={styles["root"]}>
+		<Layout title="Тренды" className={styles["root"]} isLoading={isLoading}>
 			<section className={styles["control"]}>
 				<Calendar
 					dates={dates}

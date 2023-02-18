@@ -1,82 +1,157 @@
 import { IExhausterParameters } from "./types";
+import { faker } from "@faker-js/faker";
 
 const mockSchema: IExhausterParameters = {
 	bearings: [
 		{
 			displayName: "ПС1",
 			name: "1",
-			temperature: 77,
+			temperature: {
+				status: "ok",
+				value: faker.datatype.number({ max: 100, min: 20 }),
+			},
 			vibration: {
-				axial: 55,
-				horizontal: 44,
-				vertical: 123,
+				axial: {
+					status: "ok",
+					value: 0,
+				},
+				horizontal: {
+					status: "ok",
+					value: 0,
+				},
+				vertical: {
+					status: "ok",
+					value: 0,
+				},
 			},
 		},
 		{
 			displayName: "ПС2",
 			name: "2",
-			temperature: 123,
+			temperature: {
+				status: "ok",
+				value: 0,
+			},
 			vibration: {
-				axial: 126,
-				horizontal: 11,
-				vertical: 87,
+				axial: {
+					status: "ok",
+					value: 0,
+				},
+				horizontal: {
+					status: "ok",
+					value: 0,
+				},
+				vertical: {
+					status: "ok",
+					value: 0,
+				},
 			},
 		},
 		{
 			displayName: "ПС3",
 			name: "3",
-			temperature: 15,
+			temperature: {
+				status: "ok",
+				value: 0,
+			},
 		},
 		{
 			displayName: "ПС4",
 			name: "4",
-			temperature: 73,
+			temperature: {
+				status: "ok",
+				value: 0,
+			},
 		},
 		{
 			displayName: "ПС5",
 			name: "5",
-			temperature: 42,
+			temperature: {
+				status: "ok",
+				value: 0,
+			},
 		},
 		{
 			displayName: "ПС6",
 			name: "6",
-			temperature: 9,
+			temperature: {
+				status: "ok",
+				value: 0,
+			},
 		},
 		{
 			displayName: "ПС7",
 			name: "7",
-			temperature: 78,
+			temperature: {
+				status: "ok",
+				value: 0,
+			},
 			vibration: {
-				axial: 53,
-				horizontal: 87,
-				vertical: 1,
+				axial: {
+					status: "ok",
+					value: 0,
+				},
+				horizontal: {
+					status: "ok",
+					value: 0,
+				},
+				vertical: {
+					status: "ok",
+					value: 0,
+				},
 			},
 		},
 		{
 			displayName: "ПС8",
 			name: "8",
-			temperature: 45,
+			temperature: {
+				status: "ok",
+				value: 0,
+			},
 			vibration: {
-				axial: 45,
-				horizontal: 43,
-				vertical: 23,
+				axial: {
+					status: "ok",
+					value: 0,
+				},
+				horizontal: {
+					status: "ok",
+					value: 0,
+				},
+				vertical: {
+					status: "ok",
+					value: 0,
+				},
 			},
 		},
-
 		{
 			displayName: "ПС9",
 			name: "6",
-			temperature: 45,
+			temperature: {
+				status: "ok",
+				value: 0,
+			},
 		},
 	],
 	cooler: {
 		oil: {
-			temperatureAfter: 10,
-			temperatureBefore: 20,
+			temperatureAfter: {
+				status: "ok",
+				value: 0,
+			},
+			temperatureBefore: {
+				status: "ok",
+				value: 0,
+			},
 		},
 		water: {
-			temperatureAfter: 10,
-			temperatureBefore: 20,
+			temperatureAfter: {
+				status: "ok",
+				value: 0,
+			},
+			temperatureBefore: {
+				status: "ok",
+				value: 0,
+			},
 		},
 	},
 	gasManifold: {
@@ -85,17 +160,35 @@ const mockSchema: IExhausterParameters = {
 	},
 	isWork: true,
 	oilSystem: {
-		level: 50,
-		pressure: 300,
+		level: {
+			status: "ok",
+			value: 0,
+		},
+		pressure: {
+			status: "ok",
+			value: 0,
+		},
 	},
 	transmission: {
 		rotor: {
-			amperage: 0.1,
-			voltage: 25,
+			amperage: {
+				status: "ok",
+				value: 0,
+			},
+			voltage: {
+				status: "ok",
+				value: 0,
+			},
 		},
 		stator: {
-			amperage: 2.5,
-			voltage: 65,
+			amperage: {
+				status: "ok",
+				value: 0,
+			},
+			voltage: {
+				status: "ok",
+				value: 0,
+			},
 		},
 	},
 	valve: {
